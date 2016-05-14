@@ -24,8 +24,8 @@ Das Skript basiert auf Funktionen des von Save.TV veröffentlichten Kodi-Plugins
 ```
 3. Hinterlegung der Save-TV-Zugangsdaten in der Datei "savetv.py":
 ```
-    - username = ''
-    - password = ''
+    username = ''
+    password = ''
 ```
 4. Hinterlegung der Mail-Zugangsdaten in der Datei "savetv-movie-mailer.py":
 ```
