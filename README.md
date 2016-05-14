@@ -40,6 +40,7 @@ Das Skript basiert auf Funktionen des von Save.TV veröffentlichten Kodi-Plugins
         smtp_password = "mail-password"
    ```
 5. Erstellung der Movie-Liste mit regulären Ausdrücken. Eine kurze Beschreibung mit Beispielen wie folgt:
+
    ```
     WICHTIG: Keine Leerzeichen, da dann ALLE Einträge erfasst werden.
     REGEXP-BEFEHL: ^  = Zeilenanfang
@@ -61,6 +62,7 @@ Das Skript basiert auf Funktionen des von Save.TV veröffentlichten Kodi-Plugins
     Cumberbatch
     Di.*Caprio
    ```
+
 # Aufruf
 ```
     Usage: python savetv-movie-mailer.py --recipient-mail-addr=<test@example.com> --recipient-name=<username> --savetv-movie-list=<movie-liste.txt>
