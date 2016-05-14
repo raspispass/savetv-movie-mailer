@@ -1,0 +1,20 @@
+====== Reguläre Ausdrücke Kurzbeschreibung
+WICHTIG: Keine Leerzeichen, da dann ALLE Einträge erfasst werden.
+REGEXP-BEFEHL: ^  = Zeilenanfang
+REGEXP-BEFEHL: .  = Ein beliebiges Zeichen
+REGEXP-BEFEHL: \s = Leerzeichen/Tab und Satz-Zeichen
+REGEXP-BEFEHL: .* = Ein beliebiges Zeichen - Aber beliebig oft -> *
+REGEXP-BEFEHL: $  = Ende des Titels
+REGEXP-BEFEHL: \. = Tatsächlicher Punkt
+REGEXP-BEFEHL: (?=Terminator)(?=^((?!S.C.C.).)*$) => Ein Schlüsselbegriff (Terminator) soll enthalten sein, aber nicht in Kominbation mit einem anderen Schlüsselbegriff (S.C.C.) 
+====== Darsteller
+Norton
+Deniro
+Pacino
+Damon
+====== Filme
+Sherlock.*Holmes
+Blade.*Runner
+James.*Bond
+Cumberbatch
+Di.*Caprio
