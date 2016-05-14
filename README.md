@@ -137,7 +137,7 @@ Das Skript basiert auf Funktionen des von Save.TV veröffentlichten Kodi-Plugins
 
 # Beispielhafte Mail mit den Suchergebnissen:
 
-[Screenshot]
+![Beispielhafte Mail mit den Suchergebnissen](https://github.com/raspispass/savetv-movie-mailer/blob/master/savetv-movie-mailer-example-mail.png "Beispielhafte Mail mit den Suchergebnissen")
 
 # Integration mit Dropbox (Synchronisierung der Movie-Liste)
 
