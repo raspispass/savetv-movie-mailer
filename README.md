@@ -8,27 +8,27 @@ Die Treffer werden anschaulich per Email versand, sodass der Empfänger über in
 
 Die Suchbegriffe werden als reguläre Ausdrücke in einer Datei hinterlegt (ein Suchbegriff pro Zeile).
 
-Das Skript ist Mehrbenutzer-fähig, sodass Benutzer-individuelle Suchbegriffe angegeben werden können und ensprechend die Ergebnisse an unterschiedliche Email-Adressen versand werden.
+Das Skript ist mehrbenutzerfähig, sodass benutzerindividuelle Suchbegriffe angegeben werden können und ensprechend die Ergebnisse an unterschiedliche Email-Adressen versand werden.
 
 Das Skript basiert auf Funktionen des von Save.TV veröffentlichten Kodi-Plugins (siehe http://cdn.save.tv/downloads/kodi/plugin.video.savetv-0.7.zip).
 
 # Vorbereitung und Konfiguration
 
 1. Kopieren der Dateien des Skripts in ein eigenes Verzeichnis, z. B.:
-```
+   ```
     mkdir /home/pi/save-tv-mailer; cp /folder/of/unzipped/files /home/pi/save-tv-mailer/
-```
-2. Erstellen eines Verzeichnis für die Benutzer-individuellen SQLite-Datenbanken, z. B: 
-```
+   ```
+2. Erstellen eines Verzeichnisses für die benutzerindividuellen SQLite-Datenbanken, z. B: 
+   ```
     mkdir /home/pi/save-tv-mailer/raspispass
-```
+   ```
 3. Hinterlegung der Save-TV-Zugangsdaten in der Datei "savetv.py":
-```
+   ```
     username = ''
     password = ''
-```
+   ```
 4. Hinterlegung der Mail-Zugangsdaten in der Datei "savetv-movie-mailer.py":
-```
+   ```
         [...]
 
         # Mail configuration
@@ -38,9 +38,9 @@ Das Skript basiert auf Funktionen des von Save.TV veröffentlichten Kodi-Plugins
         smtpserver = 'smtp.domain.com'
         smtp_username = "savetv@domain.com"
         smtp_password = "mail-password"
-```
-5. Erstellung der Movie-Liste mit regulären Ausdrückenmit regulären Ausdrücken. Eine kurze Beschreibung mit Beispielen wie folgt:
-```
+   ```
+5. Erstellung der Movie-Liste mit regulären Ausdrücken. Eine kurze Beschreibung mit Beispielen wie folgt:
+   ```
     WICHTIG: Keine Leerzeichen, da dann ALLE Einträge erfasst werden.
     REGEXP-BEFEHL: ^  = Zeilenanfang
     REGEXP-BEFEHL: .  = Ein beliebiges Zeichen
@@ -60,7 +60,7 @@ Das Skript basiert auf Funktionen des von Save.TV veröffentlichten Kodi-Plugins
     James.*Bond
     Cumberbatch
     Di.*Caprio
-```
+   ```
 # Aufruf
 ```
     Usage: python savetv-movie-mailer.py --recipient-mail-addr=<test@example.com> --recipient-name=<username> --savetv-movie-list=<movie-liste.txt>
@@ -139,9 +139,9 @@ Das Skript basiert auf Funktionen des von Save.TV veröffentlichten Kodi-Plugins
 
 ![Beispielhafte Mail mit den Suchergebnissen](https://github.com/raspispass/savetv-movie-mailer/blob/master/savetv-movie-mailer-example-mail.png "Beispielhafte Mail mit den Suchergebnissen")
 
-# Integration mit Dropbox (Synchronisierung der Movie-Liste)
+# Integration mit Dropbox
 
-Damit die Movie-Liste komfortabel vom Desktop-Rechner aus bearbeitet werden kann ist eine Synchronisierung der Datei über den Dienst Dropbox möglich. Hierfür kann folgendes Bash-Skript auf dem Server verwendet werden, welches in regelmäßigen Abständen die Movie-Liste aus der Dropbox herunterlädt. Hinterlegt werden muss der individuelle Download-Link:
+Damit die Movie-Liste komfortabel vom Desktop-Rechner aus bearbeitet werden kann, ist eine Synchronisierung der Datei über den Dienst Dropbox möglich. Hierfür kann folgendes Bash-Skript auf dem Server verwendet werden, welches in regelmäßigen Abständen die Movie-Liste aus der Dropbox herunterlädt. Hinterlegt werden muss der individuelle Download-Link:
 ```
     #!/bin/bash
     wget https://www.dropbox.com/sh/[...]/[...]?dl=1 -O dropbox_tmp.zip;unzip -o dropbox_tmp.zip;rm dropbox_tmp.zip; dos2unix savetv-movie-liste-from-dropbox.txt
